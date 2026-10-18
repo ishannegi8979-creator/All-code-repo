@@ -8,7 +8,7 @@ int main ()
 {
     // initialization of dynamic arrays
     vector <int> arr{ 1 ,2 , 3, 4, 5 , 6};
-    vector <int> brr{ 3 , 4 , 9 };
+    vector <int> brr{ 3, 4 , 9 };
 
     vector <int> ans;
     // outer loop on a
