@@ -6,41 +6,30 @@ using namespace std ;
 
 //?? UDF For Max
 
-int getmax(int arr[][3], int row, int col)
+void transpose(int arr[][3], int row ,int col , int  transposeArr[][3])
 {
-    int maxi =INT_MIN;
-    for (int i = 0 ; i<row ; i++)
+    
+    for(int i = 0 ; i<row ; i++)
     {
-        for(int j= 0  ;j<col ; j++)
+        for(int j = 0 ; j<col ; j++)
         {
-            if(arr[i][j] >maxi)
-            {
-                maxi = arr[i][j];
-            }
+            // swap(arr[i][j] , arr[j][i]);
+            transposeArr[j][i]= arr[i][j];
         }
     }
-    return maxi ;
+}
 
-        }
-
-int getmin(int arr[][3], int row, int col)
+void printArray(int arr[][3], int row ,int col)
 {
-    int mini =INT_MAX;
-    for (int i = 0 ; i<row ; i++)
+    for(int i = 0 ; i<row ; i++)
     {
-        for(int j= 0  ;j<col ; j++)
+        for(int j = 0 ; j<col ; j++)
         {
-            if(arr[i][j] < mini)
-            {
-                mini = arr[i][j];
-            }
+            cout << arr[i][j]<< " ";
         }
+        cout <<endl;    
     }
-    return mini ;
-
-        }
-
-
+}
 // 2D array making 
 int main ()
 {
@@ -70,8 +59,20 @@ int main ()
     
     }
     cout << endl;
-   cout << getmax(arr , row  , col ) << endl;
-   cout << getmin(arr , row  , col ) << endl;
+    
+    cout << "Array" << endl;
+
+    printArray(arr , row ,col);
+
+    cout << "transpose" << endl;
+
+    int transposeArr[3][3];
+
+        transpose(arr , row , col , transposeArr);
+
+    cout << "Transposed one " << endl;
+
+        printArray(transposeArr , row ,col);
 
    return 0 ;
 }
